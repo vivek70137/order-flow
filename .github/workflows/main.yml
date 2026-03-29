@@ -2,9 +2,9 @@ name: Robot Framework CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   robot-tests:
@@ -29,7 +29,8 @@ jobs:
         uses: nanasess/setup-chromedriver@v2
 
       - name: Run Robot Tests
-        run: robot -d reports e2e/
+        run: |
+          robot -d reports e2e/
 
       - name: Upload Robot Reports
         uses: actions/upload-artifact@v4
