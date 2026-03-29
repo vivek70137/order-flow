@@ -19,7 +19,7 @@ change account
     Click Element    xpath://div[text()='0010021308']
 
 add to cart by catalog
-    Wait Until Element Is Visible    xpath://a[@title='Catalog']
+    Wait Until Element Is Visible    xpath://a[@title='Catalog']         20s
     Click Element    xpath://a[@title='Catalog']
     Wait Until Element Is Visible    xpath://span[text()='G035 Actelion']    10s
     Click Element    xpath://span[text()='G035 Actelion']
