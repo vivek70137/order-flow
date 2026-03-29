@@ -7,6 +7,7 @@ Resource        ../resources/cart.robot
 
 user management
     Scroll Element Into View    xpath://a[@title="User Management"]
+    wait click        xpath://a[@title="User Management"]
     Click Element    xpath://a[@title="User Management"]
     Click Element    xpath://button[text()="Create User"]
     Click Element    id=mdd
