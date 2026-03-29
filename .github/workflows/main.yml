@@ -11,33 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Step 2: Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # Step 3: Install dependencies
       - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
-      # Step 4: Install Browsers (for Selenium)
-      - name: Install Chrome & Driver
+      - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
 
-      # Step 5: Run Robot Tests
-      - name: Run Tests
-        run: |
-          robot -d reports e2e/
+      - name: Install ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
 
-      # Step 6: Upload Reports
+      - name: Run Robot Tests
+        run: robot -d reports e2e/
+
       - name: Upload Robot Reports
         uses: actions/upload-artifact@v4
         with:
           name: robot-reports
           path: reports/
+
