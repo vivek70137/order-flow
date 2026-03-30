@@ -26,5 +26,3 @@ catagories Flow
      template
      sellout
 
-signoff
-      close
