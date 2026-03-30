@@ -4,7 +4,7 @@ Variables     ../variables/userdata.py
 ***keywords***
 Open Login Page
     Open Browser    ${url}    ${browser}
-    Maximize Browser Window
+    Set Window Size    1920    1080
     Wait Until Page Contains Element    id:j_username    timeout=20s
 Login With Credentials
     [Arguments]    ${mail}=${user_mail}    ${pass}=${password}
